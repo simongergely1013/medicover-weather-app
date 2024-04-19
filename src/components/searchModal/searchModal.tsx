@@ -77,7 +77,7 @@ const SearchModal = ({ onSubmit }: any) => {
         transition: Slide,
       });
     } else {
-      onSubmit(latitude, longitude);
+      onSubmit(latitude, longitude, searchImage);
       setSearchValue("");
       setSearchImage("");
       setSearchResults([]);
@@ -94,8 +94,14 @@ const SearchModal = ({ onSubmit }: any) => {
   });
 
   return (
-    <div>
-      <Button onClick={handleOpen}>Search city</Button>
+    <div className="m-12">
+      <Button
+        onClick={handleOpen}
+        variant="contained"
+        sx={{ fontSize: "16px" }}
+      >
+        Search city
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
